@@ -11,7 +11,7 @@
  * 2) Add ResetTotal method.  This is to reset ouput sum to 0, when error is less than
  *    the predefined max loss, or when error sways pass the setpoint
  *
- * TODO: for (!mP_On_E), or P_ON_M is on, I haven't tested this case so I didn't do learning.
+ * TODO: for mP_On_E == 0, or P_ON_M is on, I haven't tested this case so I didn't do learning.
  * This case should be reviewed in future
  *
  * Note: naming convention on variables:
