@@ -43,6 +43,7 @@ PID_SGD::PID_SGD(double* ipInput,
 	double iMaxLoss,
 	double iLearningRate)
 {
+	// mMaxLoss will determine if we are in good state, or need to continue the training
 	mMaxLoss = iMaxLoss;
 	mKpLearningRate = iLearningRate;
 	mKiLearningRate = iLearningRate;
@@ -371,7 +372,9 @@ int PID_SGD::GetDirection()
 double PID_SGD::CalcSGD(double iPrevFeedback, double iNewFeedback, double iTheta, double iLearningRate)
 {
 	// English refence: page 7 at: https://mycourses.aalto.fi/pluginfile.php/393629/mod_resource/content/1/Lecture8.pdf
+	// downloaded as: doc/Lecture8.pdf
 	// or, in Chinese: http://blog.csdn.net/lilyth_lilyth/article/details/8973972
+	// downloaded as: doc/SGD_Theory_in_Chinese.pdf
 	// simplify it as:
 	// h(x) = gTheta * x, h(x) is the PID input for next episode
 	// where, x is prevFeedback, can be set to anything (like 0.0) at beginning
